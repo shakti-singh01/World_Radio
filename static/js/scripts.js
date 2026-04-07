@@ -14,6 +14,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const markers = new Map();
 
+  // Ensure map is properly sized for full screen
+  setTimeout(() => {
+    map.invalidateSize();
+  }, 100);
+
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map);
@@ -98,8 +103,18 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   fetch('/api/radio_stations')
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) throw new Error('API Error: ' + response.status);
+      return response.json();
+    })
     .then(data => {
+      console.log('Loaded stations:', data.length);
+      
+      if (!Array.isArray(data) || data.length === 0) {
+        stationName.textContent = 'No stations loaded';
+        return;
+      }
+
       stations = data
         .map((station, index) => ({
           id: index,
@@ -110,9 +125,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }))
         .filter(station => !Number.isNaN(station.latitude) && !Number.isNaN(station.longitude) && station.stream_url);
 
+      console.log('Valid stations:', stations.length);
       filteredStations = [...stations];
       renderStationList();
 
+      // Add markers to map
       stations.forEach(station => {
         const marker = L.marker([station.latitude, station.longitude]).addTo(map);
         marker.bindPopup(`
@@ -127,8 +144,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         markers.set(station.id, marker);
       });
+      
+      // Fit map to all markers
+      if (stations.length > 0) {
+        const group = new L.featureGroup(Array.from(markers.values()));
+        map.fitBounds(group.getBounds());
+      }
     })
-    .catch(() => {
+    .catch(error => {
+      console.error('Error loading stations:', error);
+      stationName.textContent = 'Unable to load stations: ' + error.message;
       stationList.innerHTML = '<li class="empty-state">Unable to load stations right now.</li>';
     });
 
