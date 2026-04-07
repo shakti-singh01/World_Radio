@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify
+from flask_cors import CORS
 import pandas as pd
 import json
 import time
@@ -6,11 +7,20 @@ import os
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='/static')
+CORS(app)
+
+# Get the absolute path to the CSV file
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CSV_PATH = os.path.join(BASE_DIR, 'data', 'radio_stations.csv')
 
 # Load radio stations data
-data = pd.read_csv('data/radio_stations.csv')
-fallback_stations = data.to_dict(orient='records')
+try:
+    data = pd.read_csv(CSV_PATH)
+    fallback_stations = data.to_dict(orient='records')
+except Exception as e:
+    print(f"Error loading CSV: {e}")
+    fallback_stations = []
 
 RADIO_BROWSER_BASES = [
     'https://de1.api.radio-browser.info/json/stations/search',
