@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Radio Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css">
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <h1>World Radio Explorer</h1>
+      <p>Browse stations on the map, discover by name, and stream live in one click.</p>
+    </header>
+
+    <section class="toolbar">
+      <input id="station-search" type="text" placeholder="Search stations by name..." aria-label="Search stations">
+      <button id="clear-search" type="button">Clear</button>
+      <span id="station-count"></span>
+    </section>
+
+    <main class="layout-grid">
+      <aside class="panel station-panel">
+        <h2>Stations</h2>
+        <ul id="station-list"></ul>
+      </aside>
+
+      <section class="panel map-panel">
+        <div id="map"></div>
+      </section>
+    </main>
+
+    <section id="station-info" class="player-panel">
+      <h2>Now Playing</h2>
+      <p id="station-name">Choose a station to start listening.</p>
+      <audio id="audio-player" controls preload="none"></audio>
+    </section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+  <script src="/static/js/scripts.js"></script>
+</body>
+</html>

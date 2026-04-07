@@ -1,0 +1,36 @@
+name,latitude,longitude,stream_url
+San Francisco Radio,37.7749,-122.4194,https://stream.radioparadise.com/rock-128
+New York Radio,40.7128,-74.006,http://stream.whus.org:8000/whusfm
+London Radio,51.5074,-0.1276,http://media-ice.musicradio.com/CapitalMP3
+Sydney Radio,-33.8688,151.2093,http://202.6.74.107:8060/;stream.nsv
+Tokyo Radio,35.6895,139.6917,http://radio.garden/api/ara/content/listen/ZTgkgXOs/channel.mp3
+Radio Mirchi,19.076,72.8777,http://peridot.streamguys.com:7150/Mirchi
+AIR FM Gold,28.6139,77.209,http://air.pc.cdn.bitgravity.com/air/live/pbaudio003/playlist.m3u8
+Radio City,12.9716,77.5946,http://prclive1.listenon.in:9960/
+Red FM,19.076,72.8777,http://sc-bb.1.fm:8017/
+Big FM,28.6139,77.209,http://uk5.internet-radio.com:8275/
+Fever FM,19.076,72.8777,http://peridot.streamguys.com:7150/Fever104
+Los Angeles Groove,34.0522,-118.2437,http://stream.radioparadise.com/global-128
+Chicago Jazz,41.8781,-87.6298,http://jazz-wr04.ice.infomaniak.ch/jazz-wr04-128.mp3
+Toronto Mix,43.65107,-79.347015,http://stream.live.vc.bbcmedia.co.uk/bbc_world_service
+Mexico City Beats,19.4326,-99.1332,http://us3.internet-radio.com:8266/stream
+Rio Samba Radio,-22.9068,-43.1729,http://playerservices.streamtheworld.com/api/livestream-redirect/ANTENA1AAC.aac
+Buenos Aires Pop,-34.6037,-58.3816,http://20043.live.streamtheworld.com/ASPEN.mp3
+Paris Lounge,48.8566,2.3522,http://icecast.radiofrance.fr/fip-midfi.mp3
+Berlin Electronic,52.52,13.405,http://dispatcher.rndfnk.com/br/brklassik/live/mp3/low
+Madrid Hits,40.4168,-3.7038,http://19573.live.streamtheworld.com/CADENADIAL.mp3
+Rome Classics,41.9028,12.4964,http://icestreaming.rai.it/1.mp3
+Amsterdam Dance,52.3676,4.9041,http://stream.slam.nl/slam
+Stockholm Chill,59.3293,18.0686,http://stream.radioparadise.com/mellow-128
+Moscow FM,55.7558,37.6173,http://pub0102.101.ru:8000/stream/pro/aac/64/100
+Cairo Sounds,30.0444,31.2357,http://s3.voscast.com:11109/;
+Lagos Live,6.5244,3.3792,http://streamingv2.shoutcast.com/naija-fm
+Nairobi Pop,-1.2921,36.8219,http://stream.zeno.fm/3v3k6m9h5f8uv
+Cape Town Radio,-33.9249,18.4241,http://live.primediaplus.com/702
+Dubai Mix,25.2048,55.2708,http://playerservices.streamtheworld.com/api/livestream-redirect/VIRGINRADIO_DUBAIAAC.aac
+Istanbul Hits,41.0082,28.9784,http://dyg.radyotvonline.net:8000/joyturk
+Bangkok Groove,13.7563,100.5018,http://112.121.150.133:8026/stream
+Singapore Vibes,1.3521,103.8198,http://playerservices.streamtheworld.com/api/livestream-redirect/987FMAAC.aac
+Seoul Pop,37.5665,126.978,http://211.43.210.44:9316/
+Manila FM,14.5995,120.9842,http://stream.zeno.fm/2x6s0m0n5f8uv
+Auckland Waves,-36.8509,174.7645,http://stream.radioparadise.com/eclectic-128
